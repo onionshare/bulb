@@ -132,7 +132,7 @@ with open('MANIFEST.in', 'w') as manifest_file:
 
 setup(
   name = 'stem',
-  version = '1.8.0-maint',
+  version = '1.8.1',
   description = DRY_RUN_SUMMARY if DRY_RUN else SUMMARY,
   long_description = DESCRIPTION,
   license = stem.__license__,
