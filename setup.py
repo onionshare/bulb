@@ -66,7 +66,7 @@
 # * Contact package maintainers
 # * Announce the release (example: https://blog.torproject.org/blog/stem-release-11)
 
-import distutils.core
+from distutils.core import setup
 import os
 import sys
 import stem
@@ -130,34 +130,33 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 with open('MANIFEST.in', 'w') as manifest_file:
   manifest_file.write(MANIFEST)
 
-try:
-  distutils.core.setup(
-    name = 'stem-dry-run' if DRY_RUN else 'stem',
-    version = stem.__version__,
-    description = DRY_RUN_SUMMARY if DRY_RUN else SUMMARY,
-    long_description = DESCRIPTION,
-    license = stem.__license__,
-    author = stem.__author__,
-    author_email = stem.__contact__,
-    url = stem.__url__,
-    packages = ['stem', 'stem.client', 'stem.descriptor', 'stem.interpreter', 'stem.response', 'stem.util'],
-    keywords = 'tor onion controller',
-    scripts = ['tor-prompt'],
-    package_data = {
-      'stem': ['cached_fallbacks.cfg', 'cached_manual.sqlite', 'settings.cfg'],
-      'stem.interpreter': ['settings.cfg'],
-      'stem.util': ['ports.cfg'],
-    }, classifiers = [
-      'Development Status :: 5 - Production/Stable',
-      'Intended Audience :: Developers',
-      'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)',
-      'Topic :: Security',
-      'Topic :: Software Development :: Libraries :: Python Modules',
-    ],
-  )
-finally:
-  if os.path.exists('MANIFEST.in'):
-    os.remove('MANIFEST.in')
+setup(
+  name = 'stem',
+  version = '1.8.0-maint',
+  description = DRY_RUN_SUMMARY if DRY_RUN else SUMMARY,
+  long_description = DESCRIPTION,
+  license = stem.__license__,
+  author = stem.__author__,
+  author_email = stem.__contact__,
+  url = stem.__url__,
+  packages = ['stem', 'stem.client', 'stem.descriptor', 'stem.interpreter', 'stem.response', 'stem.util'],
+  keywords = 'tor onion controller',
+  scripts = ['tor-prompt'],
+  package_data = {
+    'stem': ['cached_fallbacks.cfg', 'cached_manual.sqlite', 'settings.cfg'],
+    'stem.interpreter': ['settings.cfg'],
+    'stem.util': ['ports.cfg'],
+  }, classifiers = [
+    'Development Status :: 5 - Production/Stable',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)',
+    'Topic :: Security',
+    'Topic :: Software Development :: Libraries :: Python Modules',
+  ],
+)
 
-  if os.path.exists('MANIFEST'):
-    os.remove('MANIFEST')
+if os.path.exists('MANIFEST.in'):
+  os.remove('MANIFEST.in')
+
+if os.path.exists('MANIFEST'):
+  os.remove('MANIFEST')
