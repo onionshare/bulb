@@ -149,7 +149,7 @@ module_info = get_module_info()
 
 try:
   setuptools.setup(
-    name = 'bulb-dry-run' if DRY_RUN else 'bulb',
+    name = 'cepa-dry-run' if DRY_RUN else 'cepa',
     version = module_info['version'],
     description = DRY_RUN_SUMMARY if DRY_RUN else SUMMARY,
     long_description = DESCRIPTION,
