@@ -518,7 +518,7 @@ import stem.util.enum
 
 from typing import Any, Optional, Sequence
 
-__version__ = '1.8.0-dev'
+__version__ = '1.8.2'
 __author__ = 'Damian Johnson'
 __contact__ = 'atagar@torproject.org'
 __url__ = 'https://stem.torproject.org/'
