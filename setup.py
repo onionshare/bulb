@@ -131,8 +131,8 @@ with open('MANIFEST.in', 'w') as manifest_file:
   manifest_file.write(MANIFEST)
 
 setup(
-  name = 'stem',
-  version = '1.8.1',
+  name = 'cepa',
+  version = '1.8.3',
   description = DRY_RUN_SUMMARY if DRY_RUN else SUMMARY,
   long_description = DESCRIPTION,
   license = stem.__license__,
