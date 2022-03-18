@@ -9,11 +9,7 @@ import stem
 import stem.directory
 import stem.prereq
 
-try:
-  # added in python 3.3
-  from unittest.mock import patch, Mock
-except ImportError:
-  from mock import patch, Mock
+from unittest.mock import patch, Mock
 
 URL_OPEN = 'urllib.request.urlopen' if stem.prereq.is_python_3() else 'urllib2.urlopen'
 

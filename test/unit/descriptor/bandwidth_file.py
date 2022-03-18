@@ -4,6 +4,7 @@ Unit tests for stem.descriptor.bandwidth_file.
 
 import datetime
 import unittest
+from unittest.mock import Mock, patch
 
 import stem.descriptor
 
@@ -15,12 +16,6 @@ try:
   from collections import OrderedDict
 except ImportError:
   from stem.util.ordereddict import OrderedDict
-
-try:
-  # added in python 3.3
-  from unittest.mock import Mock, patch
-except ImportError:
-  from mock import Mock, patch
 
 EXPECTED_MEASUREMENT_1 = {
   'scanner': '/scanner.1/scan-data/bws-0.0:0.8-done-2019-01-13-22:55:22',

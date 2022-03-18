@@ -20,6 +20,8 @@ import stem.version
 import stem.util.str_tools
 import test.require
 
+from unittest.mock import Mock, patch
+
 from stem.client.datatype import CertType
 from stem.descriptor import DigestHash, DigestEncoding
 from stem.descriptor.certificate import ExtensionType
@@ -36,12 +38,6 @@ try:
   from collections import OrderedDict
 except ImportError:
   from stem.util.ordereddict import OrderedDict
-
-try:
-  # added in python 3.3
-  from unittest.mock import Mock, patch
-except ImportError:
-  from mock import Mock, patch
 
 TARFILE_FINGERPRINTS = set([
   'B6D83EC2D9E18B0A7A33428F8CFA9C536769E209',
