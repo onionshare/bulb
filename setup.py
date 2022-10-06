@@ -153,6 +153,9 @@ setup(
     'Topic :: Security',
     'Topic :: Software Development :: Libraries :: Python Modules',
   ],
+  install_requires=[
+    "setuptools >= 65.4.1"
+  ]
 )
 
 if os.path.exists('MANIFEST.in'):
