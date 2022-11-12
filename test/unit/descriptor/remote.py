@@ -13,6 +13,8 @@ import stem.descriptor.remote
 import stem.prereq
 import stem.util.str_tools
 
+from unittest.mock import patch, Mock, MagicMock
+
 from stem.descriptor.remote import Compression
 from test.unit.descriptor import read_resource
 
@@ -20,12 +22,6 @@ try:
   from http.client import HTTPMessage  # python3
 except ImportError:
   from httplib import HTTPMessage  # python2
-
-try:
-  # added in python 3.3
-  from unittest.mock import patch, Mock, MagicMock
-except ImportError:
-  from mock import patch, Mock, MagicMock
 
 # The urlopen() method is in a different location depending on if we're using
 # python 2.x or 3.x. The 2to3 converter accounts for this in imports, but not

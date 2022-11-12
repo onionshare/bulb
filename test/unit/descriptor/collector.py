@@ -5,6 +5,7 @@ Unit tests for stem.descriptor.collector.
 import datetime
 import io
 import unittest
+from unittest.mock import Mock, patch
 
 import stem.prereq
 
@@ -12,12 +13,6 @@ from stem.descriptor import Compression, DocumentHandler
 from stem.descriptor.collector import CollecTor, File
 from test.unit.descriptor import get_resource
 from test.unit.descriptor.data.collector.index import EXAMPLE_INDEX
-
-try:
-  # added in python 3.3
-  from unittest.mock import Mock, patch
-except ImportError:
-  from mock import Mock, patch
 
 URL_OPEN = 'urllib.request.urlopen' if stem.prereq.is_python_3() else 'urllib2.urlopen'
 
