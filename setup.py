@@ -90,7 +90,7 @@ To install you can either use...
 
 ::
 
-  pip install stem
+  pip install cepa
 
 ... or install from the source tarball. Stem supports both the python 2.x and 3.x series. To use its python3 counterpart you simply need to install using that version of python.
 
